@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -6,7 +8,7 @@ myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-wi
 myDriver = webdriver.Chrome(service=myServices)
 myDriver.maximize_window()
 
-myDriver.implicitly_wait(20)
+myDriver.implicitly_wait(50)
 myDriver.get("https://testautomationpractice.blogspot.com/")
 
 # # todo 1. Select Specific checkbox
@@ -15,11 +17,11 @@ myDriver.get("https://testautomationpractice.blogspot.com/")
 # todo 2. Select all the checkboxes
 multipleCheckbox = myDriver.find_elements(By.XPATH, "//input[@type='checkbox' and contains(@id,'day')]")
 print(len(multipleCheckbox))
-#Appproach1
+# Appproach1
 # for checkbox in multipleCheckbox:
 #     checkbox.click()
 
-# #Appproach2
+#Appproach2
 # for check in range(len(multipleCheckbox)):
 #     multipleCheckbox[check].click()
 
@@ -29,7 +31,6 @@ print(len(multipleCheckbox))
 #     if weekname == "monday" or weekname == "wednesday" or weekname == "saturday":
 #         checkbox.click()
 
-
 # # todo 3. Select last two checkboxes
 # # The formula for this is ===[Total number of indexes - 2(because of last two you're selecting)]
 # # If it is last three==== Total number of indexes - 3(because of last three you're selecting)
@@ -38,14 +39,27 @@ print(len(multipleCheckbox))
 # for i in range(lengthOfCheckboxes - 2, lengthOfCheckboxes): # this means range(5, 7)
 #     multipleCheckbox[i].click()
 
+# # todo 3a. Select first two checkboxes (Method 1)
+# # The formula for this is == range(0,2)..because you are accessing from 0 to 2. Now below is how to do it in code
+# # todo In the below example, 7-7 = 0, and 7-5 = 2. range(0,2) therefore we are starting from index 0 until 2
+# lengthOfCheckboxes = len(multipleCheckbox) # to get the total length of checkboxes = 7
+# for i in range(lengthOfCheckboxes - 7, lengthOfCheckboxes - 4): # this means range(5, 7)
+#     multipleCheckbox[i].click()
 
-# todo 3. Select first two checkboxes
-# The formula for this is == range(0,2)..because you are accessing from 0 to 2. Now below is how to do it in code
-# todo In the below example, 7-7 = 0, and 7-5 = 2. range(0,2) therefore we are starting from index 0 until 2
-lengthOfCheckboxes = len(multipleCheckbox) # to get the total length of checkboxes = 7
-for i in range(lengthOfCheckboxes - 7, lengthOfCheckboxes - 4): # this means range(5, 7)
-    multipleCheckbox[i].click()
+# # todo 3b. Select first two checkboxes (Method 2)
+# # todo NB for loop can only be used with   STRING OR LIST OR RANGE OR TUPPLE.
+# for i in range(len(multipleCheckbox)):
+#     if i < 2:
+#         multipleCheckbox[i].click()
 
+# todo Select all the checkboxes
+for check in range(len(multipleCheckbox)):
+    multipleCheckbox[check].click()
+time.sleep(5)
+# todo 3b. Clear all the checkboxes at once (If they are already selected)
+for checkbox in multipleCheckbox:
+    if checkbox.is_selected():
+        checkbox.click()
 
 
 
