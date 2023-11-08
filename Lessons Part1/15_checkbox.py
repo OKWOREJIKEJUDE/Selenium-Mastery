@@ -8,7 +8,7 @@ myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-wi
 myDriver = webdriver.Chrome(service=myServices)
 myDriver.maximize_window()
 
-myDriver.implicitly_wait(50)
+myDriver.implicitly_wait(20)
 myDriver.get("https://testautomationpractice.blogspot.com/")
 
 # # todo 1. Select Specific checkbox
