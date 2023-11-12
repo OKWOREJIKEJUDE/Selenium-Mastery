@@ -7,6 +7,7 @@ driver = webdriver.Chrome(service=myServices)
 driver.maximize_window()
 driver.implicitly_wait(20)
 
+
 driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 # todo Current window handle
 singleWindowId = driver.current_window_handle
