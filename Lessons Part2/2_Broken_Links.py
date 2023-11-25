@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import  requests as requests
 
-myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver.exe")
 myDriver = webdriver.Chrome(service=myServices)
 myDriver.maximize_window()
 

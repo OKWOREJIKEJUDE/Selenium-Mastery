@@ -13,7 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-myService = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+myService = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver.exe")
 myDriver = webdriver.Chrome(service=myService)
 # Adding implicit wait(wait for up to some seconds when trying to find an element before throwing a TimeoutException)
 myDriver.implicitly_wait(5)

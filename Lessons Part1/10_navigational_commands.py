@@ -2,7 +2,7 @@ from selenium import  webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver.exe")
 navigational_commands = webdriver.Chrome(service=myServices)
 navigational_commands.maximize_window()
 navigational_commands.get("https://snapdeal.com/")

@@ -3,7 +3,7 @@ from selenium import  webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver.exe")
 browser_commands = webdriver.Chrome(service=myServices)
 browser_commands.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 # todo This method is used to maximize or expand the window size

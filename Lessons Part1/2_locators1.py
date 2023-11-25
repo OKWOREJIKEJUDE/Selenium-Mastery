@@ -3,7 +3,7 @@ from selenium import  webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver.exe")
 myOwnDriver = webdriver.Chrome(service=myServices)
 myOwnDriver.get("https://demo.nopcommerce.com/")
 # todo This method is used to maximize or expand the window size

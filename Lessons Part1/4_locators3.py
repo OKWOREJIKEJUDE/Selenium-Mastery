@@ -3,7 +3,7 @@ from selenium import  webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+myServices = Service("C:\Drivers_i_downloaded\chromedriver-win64\chromedriver.exe")
 d = webdriver.Chrome(service=myServices)
 d.get("https://web.facebook.com/?_rdc=1&_rdr")
 # todo This method is used to maximize or expand the window size
